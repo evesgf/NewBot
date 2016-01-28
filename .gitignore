@@ -1,1 +1,6 @@
 /Dev/NewBot/bin
+/Dev/NewBot/obj/Debug
+/Dev/NewBot/obj
+/Dev/TestTask/obj
+/Dev/TestTask/bin
+/Dev/.vs
