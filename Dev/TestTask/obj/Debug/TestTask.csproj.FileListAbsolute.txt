@@ -1,0 +1,6 @@
+E:\PEV\NewBot\Dev\TestTask\bin\Debug\TestTask.exe.config
+E:\PEV\NewBot\Dev\TestTask\bin\Debug\TestTask.exe
+E:\PEV\NewBot\Dev\TestTask\bin\Debug\TestTask.pdb
+E:\PEV\NewBot\Dev\TestTask\obj\Debug\TestTask.csprojResolveAssemblyReference.cache
+E:\PEV\NewBot\Dev\TestTask\obj\Debug\TestTask.exe
+E:\PEV\NewBot\Dev\TestTask\obj\Debug\TestTask.pdb

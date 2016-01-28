@@ -8,6 +8,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.WebApi;
 using NewBot.Common;
+using NewBot.BLL;
 
 namespace NewBot
 {
@@ -24,6 +25,8 @@ namespace NewBot
 
             // Register your Web API controllers.
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            builder.RegisterType<UsersBLL>().As<IUsersBLL>();
 
             // OPTIONAL: Register the Autofac filter provider.
             builder.RegisterWebApiFilterProvider(config);
