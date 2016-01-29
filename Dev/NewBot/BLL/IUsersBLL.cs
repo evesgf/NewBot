@@ -10,5 +10,9 @@ namespace NewBot.BLL
     public interface IUsersBLL: IDependency
     {
         string Hello();
+
+        int Create();
+        int Update();
+        int Delete();
     }
 }

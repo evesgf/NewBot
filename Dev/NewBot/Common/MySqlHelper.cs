@@ -16,13 +16,13 @@ namespace NewBot.Common
 
         public MySqlHelper()
         {
-            string strconn= "Database='newbot';Data Source=localhost;User ID=root;Password=123456;CharSet=utf8;";
-            conn=new MySqlConnection(strconn);
+            string strconn = "Database='newbot';Data Source=localhost;User ID=root;Password=123456;CharSet=utf8;";
+            conn = new MySqlConnection(strconn);
         }
 
         private MySqlConnection GetConn()
         {
-            if(conn.State==ConnectionState.Closed) conn.Open();
+            if (conn.State == ConnectionState.Closed) conn.Open();
             return conn;
         }
 
@@ -93,8 +93,8 @@ namespace NewBot.Common
         /// <returns></returns>
         public DataTable ExecuteQuery(string sqlstr, CommandType ct)
         {
-            DataTable dt=new DataTable();
-            cmd=new MySqlCommand(sqlstr,GetConn());
+            DataTable dt = new DataTable();
+            cmd = new MySqlCommand(sqlstr, GetConn());
             cmd.CommandType = ct;
             using (sdr = cmd.ExecuteReader(CommandBehavior.CloseConnection))
             {
@@ -121,6 +121,24 @@ namespace NewBot.Common
                 dt.Load(sdr);
             }
             return dt;
+        }
+
+        public DataTable Select(string sqlstr)
+        {
+            DataTable dt = new DataTable();
+            cmd = new MySqlCommand(sqlstr, GetConn());
+            MySqlDataReader msd = cmd.ExecuteReader();
+            dt.Load(msd);
+            OutConn();
+            return dt;
+        }
+
+        public int CUD(string sqlstr)
+        {
+            cmd = new MySqlCommand(sqlstr, GetConn());
+            int res = cmd.ExecuteNonQuery();
+            OutConn();
+            return res;
         }
     }
 }
