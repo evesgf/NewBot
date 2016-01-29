@@ -13,6 +13,8 @@ namespace NewBot.Controllers
 {
     public class HomeController : ApiController
     {
+        readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private readonly IUsersBLL _iUsersBll;
 
         public HomeController(IUsersBLL iUsersBll)
@@ -24,6 +26,8 @@ namespace NewBot.Controllers
         [AllowAnonymous]
         public HttpResponseMessage Index()
         {
+            logger.Error("Hello world from log4net");
+
             var a = _iUsersBll.Hello();
             return JsonHelper.GoToJson(a);
         }

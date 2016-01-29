@@ -24,14 +24,14 @@ namespace NewBot.BLL
 
         public int Create()
         {
-            var sqlstr = "INSERT INTO `newbot`.`users` (`Id`, `UserName`, `PassWord`, `CreateTime`, `ModifyTime`) VALUES ('1', 'newusers', '1234556', '1', '1');";
+            var sqlstr = "INSERT INTO `newbot`.`users` (`Id`, `UserName`, `PassWord`) VALUES ('1', 'newusers', '1234556');";
             var res = nh.CUD(sqlstr);
             return res;
         }
 
         public int Update()
         {
-            var sqlstr = "UPDATE `users` SET `UserName`=[newuser],`PassWord`=[123],`CreateTime`=[1],`ModifyTime`=[1] WHERE Id='1'";
+            var sqlstr = "UPDATE `users` SET `UserName`='newuser',`PassWord`='123' WHERE Id='1'";
             var res = nh.CUD(sqlstr);
             return res;
         }
